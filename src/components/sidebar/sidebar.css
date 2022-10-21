@@ -1,0 +1,73 @@
+a {
+  text-decoration: none;
+  color: inherit;
+}
+.sidebarWrapper::-webkit-scrollbar {
+  width: 0.4em;
+}
+
+.sidebarWrapper::-webkit-scrollbar-track {
+  /* box-shadow: inset 0 0 6px rgba(231, 13, 13, 0.3); */
+}
+
+.sidebarWrapper::-webkit-scrollbar-thumb {
+  background-color: rgba(76, 130, 163, 0.794);
+}
+.sidebarWrapper {
+  width: 15%;
+  background-color: rgb(1, 42, 68);
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
+}
+.sidebarTop {
+  display: flex;
+  color: white;
+  color: aliceblue;
+  justify-content: center;
+  margin: 20px auto;
+  align-items: center;
+}
+.hospitalIcon {
+  font-size: xx-large;
+  margin-right: 10px;
+}
+.hospitalTextIcon {
+  font-size: large;
+  font-weight: 700;
+}
+.sidebarItemWrapper {
+  cursor: pointer;
+  color: aliceblue;
+}
+.sidebarItem {
+  height: 50px;
+  padding-left: 12px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  transition: all 0.5s ease-in;
+}
+
+.sidebarSubItemWrapper {
+  position: static;
+  display: none;
+}
+.sidebarSubItemWrapper > .sidebarItem {
+  padding-left: 36px;
+}
+.sidebarItem:hover {
+  background-color: rgba(240, 248, 255, 0.562);
+  color: rgb(1, 42, 68);
+}
+.setDisplay {
+  display: block;
+}
+.sidebarItemTitle {
+  margin-left: 12px;
+}
+.arrowDown {
+  position: absolute;
+  right: 16px;
+}

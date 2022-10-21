@@ -1,0 +1,8 @@
+login button active = rgb(1, 42, 68); 
+login button Inactive = rgb(0, 79, 128);
+
+Sidebar Item = aliceblue
+Sidebar Item:hover = rgba(240, 248, 255, 0.562)
+
+
+font-family: 'Cinzel', serif;
