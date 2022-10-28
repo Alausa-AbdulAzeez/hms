@@ -1,0 +1,27 @@
+.departmentPageWrapper {
+  display: flex;
+}
+.listContainerWrapper {
+  margin: 32px 64px;
+  /* border: 1px solid silver; */
+  /* border-radius: 8px; */
+}
+.listContainerWrapperTitles {
+  height: 36px;
+  align-items: center;
+  display: flex;
+}
+
+.listContainerWrapperTitle {
+  align-items: center;
+  height: 100%;
+  display: flex;
+  /* background-color: ; */
+  margin-right: 4px;
+  padding: 0 8px;
+  cursor: pointer;
+}
+.listTitle {
+  margin: 0;
+  margin-left: 4px;
+}

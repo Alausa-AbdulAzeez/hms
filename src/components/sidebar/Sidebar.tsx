@@ -1,5 +1,5 @@
 import { faHospital } from '@fortawesome/free-regular-svg-icons'
-import { faHome, faChevronDown } from '@fortawesome/free-solid-svg-icons'
+import { faChevronDown } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useCallback, useEffect, useState } from 'react'
 import {
@@ -120,78 +120,18 @@ const Sidebar = () => {
                   <FontAwesomeIcon icon={faChevronDown} className='arrowDown' />
                 </div>
                 <div className='sidebarSubItemWrapper'>
-                  <div className='sidebarItem'>
-                    {<FontAwesomeIcon icon={faHome} />}
-                    <p className='sidebarItemTitle'>Dashboard</p>
-                  </div>
-                  <div className='sidebarItem'>
-                    {<FontAwesomeIcon icon={faHome} />}
-                    <p className='sidebarItemTitle'>Dashboard</p>
-                  </div>
-                  <div className='sidebarItem'>
-                    {<FontAwesomeIcon icon={faHome} />}
-                    <p className='sidebarItemTitle'>Dashboard</p>
-                  </div>
+                  {singleData.subList?.map((subListData, index) => {
+                    return (
+                      <div className='sidebarItem' key={index}>
+                        {subListData.icon}
+                        <p className='sidebarItemTitle'>{subListData.title}</p>
+                      </div>
+                    )
+                  })}
                 </div>
               </div>
             )
           })}
-          {/* <div className='sidebarItemWrapper'>
-            <div className='sidebarItem'>
-              <FontAwesomeIcon icon={faHome} />
-              <p className='sidebarItemTitle'>Dashboard</p>
-              <FontAwesomeIcon icon={faChevronDown} className='arrowDown' />
-            </div>
-          </div> */}
-          {/* <div className='sidebarItemWrapper'>
-            <div className='sidebarItem'>
-              <FontAwesomeIcon icon={faHome} />
-              <p className='sidebarItemTitle'>Dashboard</p>
-              <FontAwesomeIcon icon={faChevronDown} className='arrowDown' />
-            </div>
-            <div className='sidebarSubItemWrapper'>
-              <div className='sidebarItem'>
-                <FontAwesomeIcon icon={faHome} />
-                <p className='sidebarItemTitle'>Dashboard</p>
-              </div>
-              <div className='sidebarItem'>
-                <FontAwesomeIcon icon={faHome} />
-                <p className='sidebarItemTitle'>Dashboard</p>
-              </div>
-              <div className='sidebarItem'>
-                <FontAwesomeIcon icon={faHome} />
-                <p className='sidebarItemTitle'>Dashboard</p>
-              </div>
-            </div>
-          </div> */}
-          {/* <div className='sidebarItemWrapper'>
-            <div className='sidebarItem'>
-              <FontAwesomeIcon icon={faHome} />
-              <p className='sidebarItemTitle'>Dashboard</p>
-              <FontAwesomeIcon icon={faChevronDown} className='arrowDown' />
-            </div>
-          </div> */}
-          {/* <div className='sidebarItemWrapper'>
-            <div className='sidebarItem'>
-              <FontAwesomeIcon icon={faHome} />
-              <p className='sidebarItemTitle'>Dashboard</p>
-              <FontAwesomeIcon icon={faChevronDown} className='arrowDown' />
-            </div>
-            <div className='sidebarSubItemWrapper'>
-              <div className='sidebarItem'>
-                <FontAwesomeIcon icon={faHome} />
-                <p className='sidebarItemTitle'>Dashboard</p>
-              </div>
-              <div className='sidebarItem'>
-                <FontAwesomeIcon icon={faHome} />
-                <p className='sidebarItemTitle'>Dashboard</p>
-              </div>
-              <div className='sidebarItem'>
-                <FontAwesomeIcon icon={faHome} />
-                <p className='sidebarItemTitle'>Dashboard</p>
-              </div>
-            </div>
-          </div> */}
         </div>
       </div>
     </div>

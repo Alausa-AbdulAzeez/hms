@@ -1,3 +1,7 @@
 .departmentPageWrapper {
   display: flex;
 }
+
+.departmentMain {
+  width: 100%;
+}

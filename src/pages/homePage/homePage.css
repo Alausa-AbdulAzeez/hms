@@ -1,3 +1,10 @@
 .homePageWrapper {
   display: flex;
 }
+
+.main {
+  width: 100%;
+}
+.mainContentWrapper {
+  margin: 32px 64px;
+}

@@ -1,4 +1,6 @@
+import ListContainer from '../../components/listContainer/ListContainer'
 import Sidebar from '../../components/sidebar/Sidebar'
+import TopBar from '../../components/topBar/TopBar'
 import './departmentPage.css'
 
 const DepartmentPage = () => {
@@ -6,7 +8,10 @@ const DepartmentPage = () => {
     <div className='departmentPageWrapper'>
       <Sidebar />
 
-      <div className='main'>Department page</div>
+      <div className='departmentMain'>
+        <TopBar />
+        <ListContainer />
+      </div>
     </div>
   )
 }

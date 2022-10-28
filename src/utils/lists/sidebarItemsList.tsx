@@ -1,12 +1,24 @@
-import { faUser } from '@fortawesome/free-regular-svg-icons'
 import {
+  faCalendar,
+  faClipboard,
+  faMoneyBill1,
+  faUser,
+  faWindowRestore,
+} from '@fortawesome/free-regular-svg-icons'
+import {
+  faBaby,
+  faBed,
   faChartColumn,
   faCodeBranch,
+  faDroplet,
   faFileInvoiceDollar,
   faFlaskVial,
   faGears,
+  faHeartCircleExclamation,
   faHome,
   faHospitalUser,
+  faScissors,
+  faSliders,
   faSuitcaseMedical,
   faUserDoctor,
 } from '@fortawesome/free-solid-svg-icons'
@@ -19,7 +31,7 @@ export type sidebarItemsListType = {
   subList?: {
     title: string
     icon: JSX.Element
-  }
+  }[]
   link: string
 }[]
 
@@ -77,12 +89,42 @@ export const sidebarDataArray: sidebarItemsListType = [
     hasSubList: true,
     icon: <FontAwesomeIcon icon={faChartColumn} />,
     link: 'monitorHospital',
+    subList: [
+      {
+        title: 'View Appointment',
+        icon: <FontAwesomeIcon icon={faCalendar} />,
+      },
+      { title: 'View Payment', icon: <FontAwesomeIcon icon={faMoneyBill1} /> },
+      { title: 'View Bed Status', icon: <FontAwesomeIcon icon={faBed} /> },
+      { title: 'View Blood Bank', icon: <FontAwesomeIcon icon={faDroplet} /> },
+      {
+        title: 'View Medicine',
+        icon: <FontAwesomeIcon icon={faSuitcaseMedical} />,
+      },
+      { title: 'View Operation', icon: <FontAwesomeIcon icon={faScissors} /> },
+      {
+        title: 'View Death Report',
+        icon: <FontAwesomeIcon icon={faHeartCircleExclamation} />,
+      },
+      { title: 'View Birth Report', icon: <FontAwesomeIcon icon={faBaby} /> },
+    ],
   },
   {
     title: 'Settings',
     hasSubList: true,
     icon: <FontAwesomeIcon icon={faGears} />,
     link: 'settings',
+    subList: [
+      {
+        title: 'Manage Noticeboard',
+        icon: <FontAwesomeIcon icon={faClipboard} />,
+      },
+      { title: 'System Setting', icon: <FontAwesomeIcon icon={faSliders} /> },
+      {
+        title: 'Backup & Restore',
+        icon: <FontAwesomeIcon icon={faWindowRestore} />,
+      },
+    ],
   },
   {
     title: 'Profile',

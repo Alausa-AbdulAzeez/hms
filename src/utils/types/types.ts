@@ -15,3 +15,5 @@ export type SetUserType = React.Dispatch<
     password: string
   }>
 >
+
+// Card type

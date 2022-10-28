@@ -94,6 +94,7 @@ const Register = () => {
               }
               onChange={(event) => handleChangeUser(event, setUser)}
               data-name='email'
+              data-testid='emailTestId'
             />
             <label htmlFor=''>Password</label>
             <input

@@ -1,0 +1,49 @@
+.noticeBoardWrapper {
+  height: fit-content;
+  border: 0.1px solid silver;
+  flex: 1;
+}
+.noticeBoardHeader {
+  display: flex;
+  background-color: rgb(1, 42, 68);
+  align-items: center;
+  color: aliceblue;
+  padding: 10px;
+  margin: 0;
+}
+.noticeBoardTitle {
+  margin-left: 10px;
+}
+
+.noticeBoardItem:nth-child(even) {
+  background-color: aliceblue;
+}
+
+.noticeBoardItem {
+  padding: 8px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.noticeBoardText {
+  margin-left: 16px;
+}
+.noticeBoardBoldText {
+  margin-bottom: 0;
+}
+.noticeBoardSubText {
+  margin-top: 0;
+  font-size: small;
+  font-weight: bold;
+  color: silver;
+}
+.noticeBoardDate {
+  margin-left: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  flex-direction: column;
+  font-weight: bold;
+}
