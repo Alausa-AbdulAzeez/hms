@@ -10,7 +10,7 @@ const DepartmentPage = () => {
 
       <div className='departmentMain'>
         <TopBar />
-        <ListContainer />
+        <ListContainer page='Department' />
       </div>
     </div>
   )
