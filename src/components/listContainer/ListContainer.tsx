@@ -1,9 +1,9 @@
 import { faBars, faPlus } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useState } from 'react'
-import FormControl from '../../utils/FormControl'
-// import Form from '../form/Form'
-import Table from '../table/Table'
+import Form from '../form/Form'
+import DataTable from '../table/Table'
+
 import './listContainer.css'
 
 type PageType = {
@@ -47,7 +47,7 @@ const ListContainer = (props: PageType) => {
           <p className='listTitle'>Add {props.page}</p>
         </div>
       </div>
-      <div className=''>{showTable ? <Table /> : <FormControl />}</div>
+      <div className=''>{showTable ? <DataTable /> : <Form />}</div>
     </div>
   )
 }
