@@ -1,7 +1,12 @@
 import { DataGrid, GridColDef } from '@mui/x-data-grid'
 import {
+  AccountantTable,
   DepartmentTable,
   DoctorsTable,
+  LaboratoristTable,
+  NurseTable,
+  PatientsTable,
+  PharmacistTable,
 } from '../../utils/lists/table/TablesList'
 import './table.css'
 import { useState, useEffect } from 'react'
@@ -29,6 +34,21 @@ export default function DataTable() {
       }
       if (currentPage === 'doctor') {
         setColumn(DoctorsTable)
+      }
+      if (currentPage === 'patient') {
+        setColumn(PatientsTable)
+      }
+      if (currentPage === 'nurse') {
+        setColumn(NurseTable)
+      }
+      if (currentPage === 'pharmacist') {
+        setColumn(PharmacistTable)
+      }
+      if (currentPage === 'laboratorist') {
+        setColumn(LaboratoristTable)
+      }
+      if (currentPage === 'accountant') {
+        setColumn(AccountantTable)
       }
     }
     setColumnData()

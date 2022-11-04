@@ -1,10 +1,11 @@
-import Sidebar from '../../components/sidebar/Sidebar'
+import ListContainer from '../../components/listContainer/ListContainer'
+import TopBar from '../../components/topBar/TopBar'
 import './pharmacistPage.css'
 const PharmacistPage = () => {
   return (
-    <div className='pharmacistPageWrapper'>
-      <Sidebar />
-      <div className='pharmacistMain'>Pharmacist Page</div>
+    <div className='pharmacistMain'>
+      <TopBar />
+      <ListContainer page='Pharmacist' />
     </div>
   )
 }

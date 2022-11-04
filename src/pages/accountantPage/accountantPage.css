@@ -1,3 +1,7 @@
 .accountantPageWrapper {
   display: flex;
 }
+
+.accountantMain {
+  width: 100%;
+}

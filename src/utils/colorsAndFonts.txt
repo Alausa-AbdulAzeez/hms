@@ -1,5 +1,7 @@
 login button active = rgb(1, 42, 68); 
 login button Inactive = rgb(0, 79, 128);
+red delete btn = #b03b3b
+green add btn = #3bb077
 
 Sidebar Item = aliceblue
 Sidebar Item:hover = rgba(240, 248, 255, 0.562)

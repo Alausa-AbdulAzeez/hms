@@ -12,6 +12,7 @@ import {
   REGISTER,
 } from 'redux-persist'
 import storage from 'redux-persist/lib/storage'
+import globalVariablesReducer from './globalVariables'
 
 const persistConfig = {
   key: 'root',
@@ -22,7 +23,7 @@ const persistConfig = {
 const persistedReducer = persistReducer(persistConfig, userReducer)
 
 export const store = configureStore({
-  reducer: { user: persistedReducer },
+  reducer: { user: persistedReducer, showEditState: globalVariablesReducer },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
       serializableCheck: {

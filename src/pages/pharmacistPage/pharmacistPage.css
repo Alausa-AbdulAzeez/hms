@@ -1,3 +1,6 @@
 .pharmacistPageWrapper {
   display: flex;
 }
+.pharmacistMain {
+  width: 100%;
+}

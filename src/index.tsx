@@ -5,6 +5,7 @@ import App from './App'
 import { Provider } from 'react-redux'
 import { store, persistor } from './utils/redux/store'
 import { PersistGate } from 'redux-persist/integration/react'
+import Sidebar from './components/sidebar/Sidebar'
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
 root.render(

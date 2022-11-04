@@ -31,6 +31,7 @@ export type sidebarItemsListType = {
   subList?: {
     title: string
     icon: JSX.Element
+    link: string
   }[]
   link: string
 }[]
@@ -93,20 +94,43 @@ export const sidebarDataArray: sidebarItemsListType = [
       {
         title: 'View Appointment',
         icon: <FontAwesomeIcon icon={faCalendar} />,
+        link: '/viewAppointment',
       },
-      { title: 'View Payment', icon: <FontAwesomeIcon icon={faMoneyBill1} /> },
-      { title: 'View Bed Status', icon: <FontAwesomeIcon icon={faBed} /> },
-      { title: 'View Blood Bank', icon: <FontAwesomeIcon icon={faDroplet} /> },
+      {
+        title: 'View Payment',
+        icon: <FontAwesomeIcon icon={faMoneyBill1} />,
+        link: '/viewPayment',
+      },
+      {
+        title: 'View Bed Status',
+        icon: <FontAwesomeIcon icon={faBed} />,
+        link: '/viewBedStatus',
+      },
+      {
+        title: 'View Blood Bank',
+        icon: <FontAwesomeIcon icon={faDroplet} />,
+        link: '/viewBloodBank',
+      },
       {
         title: 'View Medicine',
         icon: <FontAwesomeIcon icon={faSuitcaseMedical} />,
+        link: '/viewMedicine',
       },
-      { title: 'View Operation', icon: <FontAwesomeIcon icon={faScissors} /> },
+      {
+        title: 'View Operation',
+        icon: <FontAwesomeIcon icon={faScissors} />,
+        link: '/viewOperation',
+      },
       {
         title: 'View Death Report',
         icon: <FontAwesomeIcon icon={faHeartCircleExclamation} />,
+        link: '/viewDeathReport',
       },
-      { title: 'View Birth Report', icon: <FontAwesomeIcon icon={faBaby} /> },
+      {
+        title: 'View Birth Report',
+        icon: <FontAwesomeIcon icon={faBaby} />,
+        link: '/viewBirthReport',
+      },
     ],
   },
   {
@@ -118,11 +142,17 @@ export const sidebarDataArray: sidebarItemsListType = [
       {
         title: 'Manage Noticeboard',
         icon: <FontAwesomeIcon icon={faClipboard} />,
+        link: '/manageNoticeboard',
       },
-      { title: 'System Setting', icon: <FontAwesomeIcon icon={faSliders} /> },
+      {
+        title: 'System Setting',
+        icon: <FontAwesomeIcon icon={faSliders} />,
+        link: '/systemSetting',
+      },
       {
         title: 'Backup & Restore',
         icon: <FontAwesomeIcon icon={faWindowRestore} />,
+        link: '/backup&Restore',
       },
     ],
   },

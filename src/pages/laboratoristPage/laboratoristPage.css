@@ -1,3 +1,7 @@
 .LaboratoristPageWrapper {
   display: flex;
 }
+
+.LaboratoristMain {
+  width: 100%;
+}

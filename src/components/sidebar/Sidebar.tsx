@@ -1,7 +1,7 @@
 import { faHospital } from '@fortawesome/free-regular-svg-icons'
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { useCallback, useEffect, useState } from 'react'
+import { useCallback, useEffect, useRef, useState } from 'react'
 import {
   sidebarDataArray,
   sidebarItemsListType,
@@ -17,6 +17,7 @@ import { patientSidebarDataArray } from '../../utils/lists/patientSidebarData'
 import { nurseSidebarDataArray } from '../../utils/lists/nurseSidebarData'
 import { laboratoristSidebarDataArray } from '../../utils/lists/laboratoristSidebarData'
 import { accountantSidebarDataArray } from '../../utils/lists/accountantSidebarData'
+import useOutsideAlerter from '../../utils/customHooks/UseOutsideAlert'
 
 const Sidebar = () => {
   const [selected, setSelected] = useState<EventTarget | null>(null)
@@ -30,17 +31,25 @@ const Sidebar = () => {
   }, [selected])
 
   const handleSub = (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+    console.log(event.target)
+
     const eventAsHtmlElement = event.target as HTMLElement
 
     if (eventAsHtmlElement.classList.contains('sidebarItem')) {
       setSelected(event.target)
     } else if (eventAsHtmlElement.classList.contains('sidebarItemTitle')) {
       if (eventAsHtmlElement.parentElement) {
+        console.log(eventAsHtmlElement.parentElement)
+
         setSelected(eventAsHtmlElement.parentElement)
       }
     } else {
-      if (eventAsHtmlElement.parentElement)
+      if (eventAsHtmlElement.parentElement) {
         setSelected(eventAsHtmlElement.parentElement?.parentElement)
+      }
+      if (eventAsHtmlElement.children.length === 1) {
+        setSelected(eventAsHtmlElement.parentElement)
+      }
     }
 
     if (
@@ -81,8 +90,12 @@ const Sidebar = () => {
       setSidebarData(accountantSidebarDataArray)
     }
   }, [sidebarData, loggedInUser.role])
+
+  const wrapperRef = useRef(null)
+
+  useOutsideAlerter(wrapperRef)
   return (
-    <div className='sidebarWrapper'>
+    <div className='sidebarWrapper' ref={wrapperRef}>
       <div className='sidebarTop'>
         <FontAwesomeIcon icon={faHospital} className='hospitalIcon' />
         <div className='hospitalTextIcon'>HMS</div>
@@ -122,10 +135,22 @@ const Sidebar = () => {
                 <div className='sidebarSubItemWrapper'>
                   {singleData.subList?.map((subListData, index) => {
                     return (
-                      <div className='sidebarItem' key={index}>
+                      <NavLink
+                        to={subListData.link}
+                        className='sidebarItem'
+                        key={index}
+                        style={({ isActive }) =>
+                          isActive
+                            ? {
+                                backgroundColor: 'rgba(240, 248, 255, 0.562)',
+                                color: 'rgb(1, 42, 68)',
+                              }
+                            : undefined
+                        }
+                      >
                         {subListData.icon}
                         <p className='sidebarItemTitle'>{subListData.title}</p>
-                      </div>
+                      </NavLink>
                     )
                   })}
                 </div>

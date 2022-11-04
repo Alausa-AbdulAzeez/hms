@@ -1,11 +1,17 @@
-import Sidebar from '../../components/sidebar/Sidebar'
+import { useRef } from 'react'
+import ListContainer from '../../components/listContainer/ListContainer'
+import TopBar from '../../components/topBar/TopBar'
+import useOutsideAlerter from '../../utils/customHooks/UseOutsideAlert'
 import './patientPage.css'
 
 const PatientPage = () => {
+  const wrapperRef = useRef(null)
+
+  useOutsideAlerter(wrapperRef)
   return (
-    <div className='patientPageWrapper'>
-      <Sidebar />
-      <div className='main'>PatientPage</div>
+    <div className='patientPageMain' ref={wrapperRef}>
+      <TopBar />
+      <ListContainer page='Patient' />
     </div>
   )
 }

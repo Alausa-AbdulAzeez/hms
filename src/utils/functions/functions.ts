@@ -7,6 +7,8 @@ import {
   SetUserType,
   UserType,
 } from '../types/types'
+import { useState } from 'react'
+import { lang } from 'moment'
 
 export const handleSetRoleList = (
   inputType: string,
@@ -75,4 +77,11 @@ export const setBtnState = (
   } else {
     setBtnDisabled(true)
   }
+}
+
+// Set Edit
+export const useHandleShowEdit = () => {
+  const [a, setA] = useState(false)
+  setA(true)
+  console.log(a)
 }

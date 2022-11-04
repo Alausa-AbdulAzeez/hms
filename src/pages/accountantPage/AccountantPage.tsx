@@ -1,11 +1,12 @@
 import './accountantPage.css'
-import Sidebar from '../../components/sidebar/Sidebar'
+import ListContainer from '../../components/listContainer/ListContainer'
+import TopBar from '../../components/topBar/TopBar'
 
 const AccountantPage = () => {
   return (
-    <div className='accountantPageWrapper'>
-      <Sidebar />
-      <div className='accountantMain'>AccountantPage </div>
+    <div className='accountantMain'>
+      <TopBar />
+      <ListContainer page='Accountant' />
     </div>
   )
 }

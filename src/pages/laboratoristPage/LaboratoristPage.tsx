@@ -1,11 +1,12 @@
-import Sidebar from '../../components/sidebar/Sidebar'
+import ListContainer from '../../components/listContainer/ListContainer'
+import TopBar from '../../components/topBar/TopBar'
 import './laboratoristPage.css'
 
 const LaboratoristPage = () => {
   return (
-    <div className='LaboratoristPageWrapper'>
-      <Sidebar />
-      <div className='LaboratoristMain'>LaboratoristPage </div>
+    <div className='LaboratoristMain'>
+      <TopBar />
+      <ListContainer page='Laboratorist' />
     </div>
   )
 }

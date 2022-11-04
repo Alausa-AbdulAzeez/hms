@@ -1,3 +1,6 @@
 .patientPageWrapper {
   display: flex;
 }
+.patientPageMain {
+  width: 100%;
+}
