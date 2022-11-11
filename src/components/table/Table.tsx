@@ -1,19 +1,34 @@
 import { DataGrid, GridColDef } from '@mui/x-data-grid'
 import {
   AccountantTable,
+  BedAllotmentTable,
   DepartmentTable,
   DoctorsTable,
   LaboratoristTable,
+  ManageAppointmentTable,
+  ManageNoticeboardTable,
+  ManagePrescriptionTable,
+  ManageProfileTable,
   NurseTable,
   PatientsTable,
   PharmacistTable,
+  ResetPasswordTable,
+  SystemSettingsTable,
+  ViewAppointmentTable,
+  ViewBedStatusTable,
+  ViewBirthReportTable,
+  ViewBloodBankTable,
+  ViewDeathReportTable,
+  ViewMedicineTable,
+  ViewOperationTable,
+  ViewPaymentTable,
 } from '../../utils/lists/table/TablesList'
 import './table.css'
 import { useState, useEffect } from 'react'
 
 export default function DataTable() {
   const rows = [
-    { id: 1, departmentName: 'Snow', description: 'Jon' },
+    { id: 1, departmentName: 'Snow', description: 'Jon', doctorName: 'Tayo' },
     { id: 2, departmentName: 'Lannister', description: 'Cersei' },
     { id: 3, departmentName: 'Lannister', description: 'Jaime' },
     { id: 4, departmentName: 'Stark', description: 'Arya' },
@@ -49,6 +64,51 @@ export default function DataTable() {
       }
       if (currentPage === 'accountant') {
         setColumn(AccountantTable)
+      }
+      if (currentPage === 'viewAppointment') {
+        setColumn(ViewAppointmentTable)
+      }
+      if (currentPage === 'viewPayment') {
+        setColumn(ViewPaymentTable)
+      }
+      if (currentPage === 'viewBedStatus') {
+        setColumn(ViewBedStatusTable)
+      }
+      if (currentPage === 'viewBloodBank') {
+        setColumn(ViewBloodBankTable)
+      }
+      if (currentPage === 'viewMedicine') {
+        setColumn(ViewMedicineTable)
+      }
+      if (currentPage === 'viewOperation') {
+        setColumn(ViewOperationTable)
+      }
+      if (currentPage === 'viewDeathReport') {
+        setColumn(ViewDeathReportTable)
+      }
+      if (currentPage === 'viewBirthReport') {
+        setColumn(ViewBirthReportTable)
+      }
+      if (currentPage === 'manageNoticeboard') {
+        setColumn(ManageNoticeboardTable)
+      }
+      if (currentPage === 'systemSetting') {
+        setColumn(SystemSettingsTable)
+      }
+      if (currentPage === 'profile') {
+        setColumn(ManageProfileTable)
+      }
+      if (currentPage === 'resetPassword') {
+        setColumn(ResetPasswordTable)
+      }
+      if (currentPage === 'manageAppointment') {
+        setColumn(ManageAppointmentTable)
+      }
+      if (currentPage === 'managePrescription') {
+        setColumn(ManagePrescriptionTable)
+      }
+      if (currentPage === 'bedAllotment') {
+        setColumn(BedAllotmentTable)
       }
     }
     setColumnData()

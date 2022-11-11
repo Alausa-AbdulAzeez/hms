@@ -2,7 +2,6 @@ import './form.css'
 import { useState, useEffect } from 'react'
 import {
   AccountantInputs,
-  bedAllotmentInputs,
   DepartmentInputs,
   DoctorsInputs,
   LaboratoristInputs,
@@ -20,7 +19,6 @@ import FormInput from '../formInput/FormInput'
 import { InputDataType } from '../../utils/types/types'
 import { useSelector } from 'react-redux'
 import { RootState } from '../../utils/redux/store'
-import TextAreaInput from '../textAreaInput/TextAreaInput'
 
 type FormPropsType = {
   edit: string
@@ -74,9 +72,6 @@ const Form = (props: FormPropsType) => {
       if (currentPage === 'managePrescription') {
         setInputData(managePrescriptionInputs)
       }
-      if (currentPage === 'bedAllotment') {
-        setInputData(bedAllotmentInputs)
-      }
     }
     setColumnData()
   }, [currentPage])
@@ -96,13 +91,6 @@ const Form = (props: FormPropsType) => {
                   )
                 })}
               </select>
-            ) : input.hasTextArea ? (
-              <TextAreaInput
-                key={input.id}
-                {...input}
-                input={input}
-                edit={props.edit}
-              />
             ) : (
               <FormInput
                 key={input.id}

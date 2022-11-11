@@ -30,6 +30,7 @@ export type InputDataType = {
   hasSelect?: boolean
   options?: string[]
   min?: number
+  hasTextArea?: boolean
 }[]
 
 // FORM VALUES DATA TYPE
@@ -57,4 +58,17 @@ export type EditValuesType = {
   address?: string
   password?: string
   confirmPassword?: string
+}
+
+export type PagePropertiesType = {
+  firstTitle: string
+  secondTitle?: string
+  showList: boolean
+  showTable?: boolean
+  title?: string
+  titlesList: {
+    title: string
+    icon: JSX.Element
+    element: JSX.Element
+  }[]
 }

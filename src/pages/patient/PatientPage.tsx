@@ -2,6 +2,7 @@ import { useRef } from 'react'
 import ListContainer from '../../components/listContainer/ListContainer'
 import TopBar from '../../components/topBar/TopBar'
 import useOutsideAlerter from '../../utils/customHooks/UseOutsideAlert'
+import { patientpageProperties } from '../../utils/lists/pageProperties/pageProperties'
 import './patientPage.css'
 
 const PatientPage = () => {
@@ -11,7 +12,7 @@ const PatientPage = () => {
   return (
     <div className='patientPageMain' ref={wrapperRef}>
       <TopBar />
-      <ListContainer page='Patient' />
+      <ListContainer pageProperties={{ ...patientpageProperties }} />
     </div>
   )
 }

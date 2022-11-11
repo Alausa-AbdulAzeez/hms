@@ -1,6 +1,7 @@
 import {
+  faCalendarCheck,
   faClipboard,
-  faWindowRestore,
+  faUser,
 } from '@fortawesome/free-regular-svg-icons'
 import {
   faBaby,
@@ -11,6 +12,8 @@ import {
   faHeartCircleExclamation,
   faHospitalUser,
   faListCheck,
+  faPills,
+  faRetweet,
   faRightLeft,
   faSliders,
   faSuitcaseMedical,
@@ -18,14 +21,14 @@ import {
 } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-type CardContentType = {
+export type CardContentType = {
   icon: JSX.Element
   title: string
   link: string
   color: string
 }[]
 
-export const cardContentList: CardContentType = [
+export const adminCardContentList: CardContentType = [
   {
     title: 'Doctor',
     icon: <FontAwesomeIcon icon={faUserDoctor} />,
@@ -124,9 +127,59 @@ export const cardContentList: CardContentType = [
     color: 'rgb(254, 240, 255)',
   },
   {
-    title: 'Backup & Restore',
-    icon: <FontAwesomeIcon icon={faWindowRestore} />,
-    link: 'backup',
+    title: 'Reset Password',
+    icon: <FontAwesomeIcon icon={faRetweet} />,
+    link: 'resetPassword',
     color: 'rgb(241, 240, 255)',
+  },
+  // {
+  //   title: 'Backup & Restore',
+  //   icon: <FontAwesomeIcon icon={faWindowRestore} />,
+  //   link: 'backup',
+  //   color: 'rgb(241, 240, 255)',
+  // },
+]
+export const doctorCardContentList: CardContentType = [
+  {
+    title: 'Patient',
+    icon: <FontAwesomeIcon icon={faHospitalUser} />,
+    link: '/patient',
+    color: 'rgb(255, 240, 240)',
+  },
+
+  {
+    title: 'Manage Appointment',
+    icon: <FontAwesomeIcon icon={faCalendarCheck} />,
+    link: '/manageAppointment',
+    color: 'rgb(240, 249, 255)',
+  },
+
+  {
+    title: 'Manage Prescription',
+    color: 'rgb(241, 240, 255)',
+
+    icon: <FontAwesomeIcon icon={faPills} />,
+    link: '/managePrescription',
+  },
+  {
+    title: 'Bed Allotment',
+    color: 'rgb(254, 240, 255)',
+
+    icon: <FontAwesomeIcon icon={faBed} />,
+    link: '/bedAllotment',
+  },
+  {
+    title: 'View Blood Bank',
+    color: 'rgb(255, 240, 254)',
+
+    icon: <FontAwesomeIcon icon={faDroplet} />,
+    link: '/viewBloodBank',
+  },
+  {
+    title: 'Manage Report',
+    color: 'rgb(240, 255, 241)',
+
+    icon: <FontAwesomeIcon icon={faListCheck} />,
+    link: '/manageReport',
   },
 ]

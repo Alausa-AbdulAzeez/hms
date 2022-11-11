@@ -3,11 +3,14 @@
   flex-direction: column;
   min-width: 150px;
   max-height: 120px;
+  min-height: 100px;
   flex: 1;
   border-radius: 10px;
   align-items: center;
   justify-content: center;
-  background-color: rgb(255, 240, 240);
+  background-color: rgb(244, 255, 240);
+  /* background-color: rgba(127, 84, 125, 0.295); */
+  max-width: 400px;
   cursor: pointer;
 }
 .cardContainer:hover {

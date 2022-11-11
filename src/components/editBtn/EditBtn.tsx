@@ -10,8 +10,9 @@ type BtnProps = {
 const EditBtn = (props: BtnProps) => {
   const dispatch: AppDispatch = useDispatch()
   const handleShowEdit = () => {
-    // console.log(props.params.row)
+    console.log(props.params.row)
     dispatch(setFormDetails(props.params.row))
+
     dispatch(setEditTrue())
   }
   return (

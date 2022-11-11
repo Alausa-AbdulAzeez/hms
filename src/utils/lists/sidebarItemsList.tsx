@@ -3,7 +3,6 @@ import {
   faClipboard,
   faMoneyBill1,
   faUser,
-  faWindowRestore,
 } from '@fortawesome/free-regular-svg-icons'
 import {
   faBaby,
@@ -17,6 +16,7 @@ import {
   faHeartCircleExclamation,
   faHome,
   faHospitalUser,
+  faRetweet,
   faScissors,
   faSliders,
   faSuitcaseMedical,
@@ -150,10 +150,15 @@ export const sidebarDataArray: sidebarItemsListType = [
         link: '/systemSetting',
       },
       {
-        title: 'Backup & Restore',
-        icon: <FontAwesomeIcon icon={faWindowRestore} />,
-        link: '/backup&Restore',
+        title: 'Reset Password',
+        icon: <FontAwesomeIcon icon={faRetweet} />,
+        link: '/resetPassword',
       },
+      // {
+      //   title: 'Backup & Restore',
+      //   icon: <FontAwesomeIcon icon={faWindowRestore} />,
+      //   link: '/backup&Restore',
+      // },
     ],
   },
   {

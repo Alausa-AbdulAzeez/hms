@@ -20,9 +20,17 @@ import ViewMedicine from './pages/viewMedicine/ViewMedicine'
 import ViewOperation from './pages/viewOperation/ViewOperation'
 import ViewDeathReport from './pages/viewDeathReport/ViewDeathReport'
 import ViewBirthReport from './pages/viewBirthReport/ViewBirthReport'
+import ManageNoticeboard from './pages/manageNoticeboard/ManageNoticeboard'
+import SystemSetting from './pages/systemSetting/SystemSetting'
+import Profile from './pages/profile/Profile'
+import ResetPassword from './pages/resetPassword/ResetPassword'
+import ManageAppointment from './pages/manageAppointment/ManageAppointment'
+import ManagePrescription from './pages/managePrescription/ManagePrescription'
+import BedAllotment from './pages/bedAllotment/BedAllotment'
 
 function App() {
   const loggedInUser = useSelector((state: RootState) => state.user.user)
+
   return (
     <BrowserRouter>
       {loggedInUser.isLoggedIn ? (
@@ -38,12 +46,20 @@ function App() {
             <Route path='laboratorist' element={<LaboratoristPage />} />
             <Route path='accountant' element={<AccountantPage />} />
             <Route path='viewAppointment' element={<ViewAppointment />} />
+            <Route path='viewPayment' element={<ViewPayment />} />
             <Route path='viewBedStatus' element={<ViewBedStatus />} />
             <Route path='viewBloodBank' element={<ViewBloodBank />} />
             <Route path='viewMedicine' element={<ViewMedicine />} />
             <Route path='viewOperation' element={<ViewOperation />} />
             <Route path='viewDeathReport' element={<ViewDeathReport />} />
+            <Route path='manageNoticeboard' element={<ManageNoticeboard />} />
+            <Route path='systemSetting' element={<SystemSetting />} />
             <Route path='viewBirthReport' element={<ViewBirthReport />} />
+            <Route path='profile' element={<Profile />} />
+            <Route path='resetPassword' element={<ResetPassword />} />
+            <Route path='manageAppointment' element={<ManageAppointment />} />
+            <Route path='managePrescription' element={<ManagePrescription />} />
+            <Route path='bedAllotment' element={<BedAllotment />} />
           </Routes>
         </div>
       ) : (

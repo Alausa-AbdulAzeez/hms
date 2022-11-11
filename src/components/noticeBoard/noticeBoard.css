@@ -6,8 +6,10 @@
 .noticeBoardHeader {
   display: flex;
   background-color: rgb(1, 42, 68);
+  background-color: aliceblue;
   align-items: center;
   color: aliceblue;
+  color: rgb(1, 42, 68);
   padding: 10px;
   margin: 0;
 }

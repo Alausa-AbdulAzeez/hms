@@ -1,4 +1,4 @@
-import './formInput.css'
+// import './formInput.css'
 import { useState } from 'react'
 import { EditValuesType, ValuesType } from '../../utils/types/types'
 import { useSelector } from 'react-redux'
@@ -13,19 +13,17 @@ type InputPropsType = {
   id: number
   name: string
   placeholder: string
-  type: string
-  min?: number
+
   edit: string
 }
 
-const FormInput = (props: InputPropsType) => {
+const TextAreaInput = (props: InputPropsType) => {
   const previousInputValues: EditValuesType = useSelector(
     (state: RootState) => state.showEditState.formDetails
   )
 
   const [values, setValues] = useState<ValuesType>({
     departmentName: '',
-
     description: '',
     name: '',
     email: '',
@@ -40,7 +38,7 @@ const FormInput = (props: InputPropsType) => {
     useState<EditValuesType>(previousInputValues)
 
   const onChange = (
-    e: React.ChangeEvent<HTMLInputElement>,
+    e: React.ChangeEvent<HTMLTextAreaElement>,
     formType: string
   ) => {
     if (formType === 'default') {
@@ -52,29 +50,28 @@ const FormInput = (props: InputPropsType) => {
         [e.target.name]: e.target.value,
       })
     }
+    console.log(props.input.name)
   }
+  console.log(props.edit)
 
   return (
     <div>
       {props.edit === 'false' ? (
-        <input
+        <textarea
           name={props.name}
           className='formInput'
           placeholder={props.placeholder}
-          type={props.type}
-          min={props.min}
+          cols={4}
           onChange={(e) => onChange(e, 'default')}
           value={values[props.input.name as keyof typeof values] as string}
         />
       ) : (
-        <input
+        <textarea
           name={props.name}
           className='formInput'
           placeholder={props.placeholder}
-          type={props.type}
-          min={props.min}
           onChange={(e) => onChange(e, 'edit')}
-          // value='a'
+          cols={4}
           value={
             editedValues[props.input.name as keyof typeof values] as string
           }
@@ -84,4 +81,4 @@ const FormInput = (props: InputPropsType) => {
   )
 }
 
-export default FormInput
+export default TextAreaInput
