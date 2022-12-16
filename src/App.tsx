@@ -27,6 +27,18 @@ import ResetPassword from './pages/resetPassword/ResetPassword'
 import ManageAppointment from './pages/manageAppointment/ManageAppointment'
 import ManagePrescription from './pages/managePrescription/ManagePrescription'
 import BedAllotment from './pages/bedAllotment/BedAllotment'
+import ManageReport from './pages/manageReport/ManageReport'
+import PatientAppointment from './pages/viewAppointment copy/PatientAppointment'
+import ViewPrescription from './pages/viewPrescription/ViewPrescription'
+import ViewDoctor from './pages/viewDoctor/ViewDoctor'
+import AdmitHistory from './pages/admitHistory/AdmitHistory'
+import OperationHistory from './pages/operationHistory/OperationHistory'
+import ViewInvoice from './pages/viewInvoice/ViewInvoice'
+import MedicineCategory from './pages/medicineCategory/MedicineCategory'
+import ManageMedicine from './pages/manageMedicine/ManageMedicine'
+import ProvideMedication from './pages/provideMedication/ProvideMedication'
+import ManageBloodDonor from './pages/manageBloodDonor/ManageBloodDonor'
+import AccountantInvoice from './pages/accountantInvoice/AccountantInvoice'
 
 function App() {
   const loggedInUser = useSelector((state: RootState) => state.user.user)
@@ -60,6 +72,19 @@ function App() {
             <Route path='manageAppointment' element={<ManageAppointment />} />
             <Route path='managePrescription' element={<ManagePrescription />} />
             <Route path='bedAllotment' element={<BedAllotment />} />
+            <Route path='manageReport' element={<ManageReport />} />
+            <Route path='patientAppointment' element={<PatientAppointment />} />
+            <Route path='viewPrescription' element={<ViewPrescription />} />
+            <Route path='viewDoctor' element={<ViewDoctor />} />
+            <Route path='admitHistory' element={<AdmitHistory />} />
+            <Route path='operationHistory' element={<OperationHistory />} />
+            <Route path='viewInvoice' element={<ViewInvoice />} />
+            <Route path='paymentHistory' element={<ViewPayment />} />
+            <Route path='medicineCategory' element={<MedicineCategory />} />
+            <Route path='manageMedicine' element={<ManageMedicine />} />
+            <Route path='provideMedication' element={<ProvideMedication />} />
+            <Route path='manageBloodDonor' element={<ManageBloodDonor />} />
+            <Route path='invoice' element={<AccountantInvoice />} />
           </Routes>
         </div>
       ) : (

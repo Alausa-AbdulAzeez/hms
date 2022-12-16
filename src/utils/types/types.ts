@@ -67,8 +67,9 @@ export type PagePropertiesType = {
   showTable?: boolean
   title?: string
   titlesList: {
+    id: number
     title: string
     icon: JSX.Element
-    element: JSX.Element
+    element: { id: number; element: JSX.Element }
   }[]
 }

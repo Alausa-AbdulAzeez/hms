@@ -1,11 +1,9 @@
-import { faBars, faPlus } from '@fortawesome/free-solid-svg-icons'
+import { faPlus } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { title } from 'process'
 import { MouseEvent, useState, useRef, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { setEditFalse } from '../../utils/redux/globalVariables'
 import { AppDispatch, RootState } from '../../utils/redux/store'
-import { PagePropertiesType } from '../../utils/types/types'
 import Form from '../form/Form'
 import DataTable from '../table/Table'
 
@@ -19,9 +17,10 @@ type PageType = {
     showTable?: boolean
     title?: string
     titlesList?: {
+      id: number
       title: string
       icon: JSX.Element
-      element: JSX.Element
+      element: { id: number; element: JSX.Element }
     }[]
   }
 }
@@ -29,6 +28,8 @@ type PageType = {
 const ListContainer = (props: PageType) => {
   const dispatch: AppDispatch = useDispatch()
   const titleRef = useRef(null)
+
+  console.log(props)
 
   const [showTable, setShowTable] = useState(true)
   const [showForm, setShowForm] = useState(false)
@@ -61,9 +62,9 @@ const ListContainer = (props: PageType) => {
       setShowForm(true)
       showEditState && dispatch(setEditFalse())
     }
-    props.pageProperties.titlesList?.map((currentItem) => {
+    props.pageProperties.titlesList?.forEach((currentItem) => {
       if (currentItem.title === singleTitle) {
-        return setDisplay(currentItem.element)
+        return setDisplay(currentItem.element.element)
       }
     })
   }
@@ -78,6 +79,7 @@ const ListContainer = (props: PageType) => {
             <div
               key={index}
               className={
+                !showEditState &&
                 props.pageProperties.titlesList?.[0].title === singleItem.title
                   ? // activeNav?.dataset.id === singleItem.title
                     'listContainerWrapperTitle activeTab'
@@ -97,7 +99,7 @@ const ListContainer = (props: PageType) => {
             <div
               key={index}
               className={
-                activeNav?.dataset.id === singleItem.title
+                !showEditState && activeNav?.dataset.id === singleItem.title
                   ? 'listContainerWrapperTitle activeTab'
                   : 'listContainerWrapperTitle'
               }

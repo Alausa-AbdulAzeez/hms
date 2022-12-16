@@ -1,17 +1,25 @@
 import { DataGrid, GridColDef } from '@mui/x-data-grid'
 import {
+  AccountantInvoiceTable,
   AccountantTable,
+  AdmitHistoryTable,
   BedAllotmentTable,
   DepartmentTable,
   DoctorsTable,
   LaboratoristTable,
   ManageAppointmentTable,
+  ManageBloodDonorTable,
+  ManageMedicineTable,
   ManageNoticeboardTable,
   ManagePrescriptionTable,
   ManageProfileTable,
+  MedicineCategoryTable,
   NurseTable,
+  OperationHistoryTable,
+  PatientAppointmentTable,
   PatientsTable,
   PharmacistTable,
+  ProvideMedicationTable,
   ResetPasswordTable,
   SystemSettingsTable,
   ViewAppointmentTable,
@@ -19,16 +27,24 @@ import {
   ViewBirthReportTable,
   ViewBloodBankTable,
   ViewDeathReportTable,
+  ViewDoctorsTable,
+  ViewInvoiceTable,
   ViewMedicineTable,
   ViewOperationTable,
   ViewPaymentTable,
+  ViewPrescriptionTable,
 } from '../../utils/lists/table/TablesList'
 import './table.css'
 import { useState, useEffect } from 'react'
-
 export default function DataTable() {
   const rows = [
-    { id: 1, departmentName: 'Snow', description: 'Jon', doctorName: 'Tayo' },
+    {
+      id: 1,
+      departmentName: 'Snow',
+      description: 'Jon',
+      doctorName: 'Tayo',
+      medicineCategory: 'malaria',
+    },
     { id: 2, departmentName: 'Lannister', description: 'Cersei' },
     { id: 3, departmentName: 'Lannister', description: 'Jaime' },
     { id: 4, departmentName: 'Stark', description: 'Arya' },
@@ -104,11 +120,47 @@ export default function DataTable() {
       if (currentPage === 'manageAppointment') {
         setColumn(ManageAppointmentTable)
       }
+      if (currentPage === 'patientAppointment') {
+        setColumn(PatientAppointmentTable)
+      }
       if (currentPage === 'managePrescription') {
         setColumn(ManagePrescriptionTable)
       }
+      if (currentPage === 'viewPrescription') {
+        setColumn(ViewPrescriptionTable)
+      }
       if (currentPage === 'bedAllotment') {
         setColumn(BedAllotmentTable)
+      }
+      if (currentPage === 'viewDoctor') {
+        setColumn(ViewDoctorsTable)
+      }
+      if (currentPage === 'admitHistory') {
+        setColumn(AdmitHistoryTable)
+      }
+      if (currentPage === 'operationHistory') {
+        setColumn(OperationHistoryTable)
+      }
+      if (currentPage === 'viewInvoice') {
+        setColumn(ViewInvoiceTable)
+      }
+      if (currentPage === 'paymentHistory') {
+        setColumn(ViewPaymentTable)
+      }
+      if (currentPage === 'medicineCategory') {
+        setColumn(MedicineCategoryTable)
+      }
+      if (currentPage === 'manageMedicine') {
+        setColumn(ManageMedicineTable)
+      }
+      if (currentPage === 'provideMedication') {
+        setColumn(ProvideMedicationTable)
+      }
+      if (currentPage === 'manageBloodDonor') {
+        setColumn(ManageBloodDonorTable)
+      }
+      if (currentPage === 'invoice') {
+        setColumn(AccountantInvoiceTable)
       }
     }
     setColumnData()

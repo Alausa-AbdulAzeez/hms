@@ -25,7 +25,7 @@ export const patientSidebarDataArray: sidebarItemsListType = [
     title: 'View Appointment',
     hasSubList: false,
     icon: <FontAwesomeIcon icon={faCalendarCheck} />,
-    link: '/viewAppointment',
+    link: '/patientAppointment',
   },
   {
     title: 'View Prescription',

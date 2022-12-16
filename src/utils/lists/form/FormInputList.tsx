@@ -508,6 +508,107 @@ export const profileInputs: InputDataType = [
     required: true,
   },
 ]
+export const bloodDonorInputs: InputDataType = [
+  {
+    id: 1,
+    name: 'name',
+    type: 'text',
+    placeholder: 'Name',
+    required: true,
+  },
+  {
+    id: 2,
+    name: 'email',
+    type: 'email',
+    placeholder: 'Email',
+
+    required: true,
+  },
+
+  {
+    id: 3,
+    name: 'address',
+    type: 'text',
+    placeholder: 'Address',
+
+    required: true,
+  },
+  {
+    id: 4,
+    name: 'phoneNo',
+    type: 'text',
+    placeholder: 'Phone No',
+
+    required: true,
+  },
+  {
+    id: 5,
+    name: 'sex',
+    type: 'text',
+    placeholder: 'Sex',
+    hasSelect: true,
+    options: ['M', 'F'],
+
+    required: true,
+  },
+  {
+    id: 6,
+    name: 'age',
+    type: 'number',
+    placeholder: 'Age',
+    required: true,
+  },
+  {
+    id: 7,
+    name: 'bloodGroup',
+    type: 'text',
+    placeholder: 'Blood Group',
+    hasSelect: true,
+    options: ['0+', 'A+'],
+  },
+  {
+    id: 8,
+    name: 'lastDonationDate',
+    type: 'text',
+    placeholder: 'Last Donation Date',
+
+    required: true,
+  },
+]
+export const accountantInvoiceInputs: InputDataType = [
+  {
+    id: 1,
+    name: 'name',
+    type: 'text',
+    placeholder: 'Name',
+    hasSelect: true,
+    required: true,
+    options: ['Tayo', 'Khalil'],
+  },
+  {
+    id: 2,
+    name: 'title',
+    type: 'text',
+    placeholder: 'Title',
+
+    required: true,
+  },
+  {
+    id: 6,
+    name: 'amount',
+    type: 'number',
+    placeholder: 'Amount',
+    required: true,
+  },
+  {
+    id: 7,
+    name: 'status',
+    type: 'text',
+    placeholder: 'Status',
+    hasSelect: true,
+    options: ['Unpaid', 'Paid'],
+  },
+]
 export const resetPasswordInputs: InputDataType = [
   {
     id: 1,
@@ -620,3 +721,88 @@ export const bedAllotmentInputs: InputDataType = [
     required: true,
   },
 ]
+export const medicineCategoryInputs: InputDataType = [
+  {
+    id: 2,
+    name: 'medicineCategory',
+    type: 'text',
+    placeholder: 'Medicine Category Name',
+    required: true,
+  },
+
+  {
+    id: 3,
+    // name: 'medicineCategoryDescription',
+    name: 'description',
+    type: 'text',
+    placeholder: 'Medicine Category Description',
+    required: true,
+  },
+]
+export const manageMedicineInputs: InputDataType = [
+  {
+    id: 2,
+    name: 'medicineName',
+    type: 'text',
+    placeholder: 'Medicine Name',
+    required: true,
+  },
+  {
+    id: 3,
+    name: 'medicineCategory',
+    type: 'text',
+    placeholder: 'Medicine Category',
+    required: true,
+    hasSelect: true,
+    options: ['Please select Category of medicine', 'Mahe', 'Fawaz'],
+  },
+
+  {
+    id: 4,
+    name: 'description',
+    type: 'text',
+    placeholder: 'Medicine Category Description',
+    required: true,
+  },
+  {
+    id: 5,
+    name: 'price',
+    type: 'text',
+    placeholder: 'Price',
+    required: true,
+  },
+  {
+    id: 6,
+    name: 'manufacturingCompany',
+    type: 'text',
+    placeholder: 'Manufacturing Company',
+    required: true,
+  },
+  {
+    id: 7,
+    name: 'quantity',
+    type: 'number',
+    placeholder: 'Quantity',
+    required: true,
+  },
+]
+export const prescriptionInputs: InputDataType = [
+  {
+    id: 2,
+    name: 'pharmacistNote',
+    type: 'text',
+    placeholder: 'Pharmacist Note',
+    required: true,
+    hasTextArea: true,
+  },
+]
+// export const manageBloodDonorInputs: InputDataType = [
+//   {
+//     id: 2,
+//     name: 'pharmacistNote',
+//     type: 'text',
+//     placeholder: 'Pharmacist Note',
+//     required: true,
+//     hasTextArea: true,
+//   },
+// ]

@@ -16,6 +16,7 @@ a {
 .sidebarWrapper {
   width: 18%;
   background-color: rgb(1, 42, 68);
+
   position: sticky;
   top: 0;
   height: 100vh;

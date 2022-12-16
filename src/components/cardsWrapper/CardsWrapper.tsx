@@ -2,6 +2,8 @@ import {
   adminCardContentList,
   CardContentType,
   doctorCardContentList,
+  patientCardContentList,
+  pharmacistCardContentList,
 } from '../../utils/lists/cardContentList'
 import { useState, useEffect } from 'react'
 
@@ -21,6 +23,12 @@ const CardsWrapper = () => {
       }
       if (loggedInUser.role === 'Doctor') {
         setInputData(doctorCardContentList)
+      }
+      if (loggedInUser.role === 'Patient') {
+        setInputData(patientCardContentList)
+      }
+      if (loggedInUser.role === 'Pharmacist') {
+        setInputData(pharmacistCardContentList)
       }
     }
     setColumnData()

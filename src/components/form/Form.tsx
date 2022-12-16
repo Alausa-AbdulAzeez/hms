@@ -2,16 +2,21 @@ import './form.css'
 import { useState, useEffect } from 'react'
 import {
   AccountantInputs,
+  accountantInvoiceInputs,
   bedAllotmentInputs,
+  bloodDonorInputs,
   DepartmentInputs,
   DoctorsInputs,
   LaboratoristInputs,
   manageAppointmentInputs,
+  manageMedicineInputs,
   manageNoticeboardInputs,
   managePrescriptionInputs,
+  medicineCategoryInputs,
   NurseInputs,
   PatientsInputs,
   PharmacistInputs,
+  prescriptionInputs,
   profileInputs,
   resetPasswordInputs,
   systemSettingsInputs,
@@ -76,6 +81,21 @@ const Form = (props: FormPropsType) => {
       }
       if (currentPage === 'bedAllotment') {
         setInputData(bedAllotmentInputs)
+      }
+      if (currentPage === 'medicineCategory') {
+        setInputData(medicineCategoryInputs)
+      }
+      if (currentPage === 'manageMedicine') {
+        setInputData(manageMedicineInputs)
+      }
+      if (currentPage === 'provideMedication') {
+        setInputData(prescriptionInputs)
+      }
+      if (currentPage === 'manageBloodDonor') {
+        setInputData(bloodDonorInputs)
+      }
+      if (currentPage === 'invoice') {
+        setInputData(accountantInvoiceInputs)
       }
     }
     setColumnData()

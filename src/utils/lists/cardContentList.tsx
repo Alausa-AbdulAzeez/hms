@@ -1,13 +1,14 @@
 import {
   faCalendarCheck,
   faClipboard,
-  faUser,
 } from '@fortawesome/free-regular-svg-icons'
 import {
+  faArrowsSplitUpAndLeft,
   faBaby,
   faBed,
   faDroplet,
   faFileInvoiceDollar,
+  faFirstAid,
   faFlaskVial,
   faHeartCircleExclamation,
   faHospitalUser,
@@ -16,6 +17,7 @@ import {
   faRetweet,
   faRightLeft,
   faSliders,
+  faStethoscope,
   faSuitcaseMedical,
   faUserDoctor,
 } from '@fortawesome/free-solid-svg-icons'
@@ -181,5 +183,72 @@ export const doctorCardContentList: CardContentType = [
 
     icon: <FontAwesomeIcon icon={faListCheck} />,
     link: '/manageReport',
+  },
+]
+export const patientCardContentList: CardContentType = [
+  {
+    title: 'Doctor',
+    icon: <FontAwesomeIcon icon={faHospitalUser} />,
+    link: '/viewDoctor',
+    color: 'rgb(255, 240, 240)',
+  },
+
+  {
+    title: 'Appointment',
+    icon: <FontAwesomeIcon icon={faCalendarCheck} />,
+    link: '/manageAppointment',
+    color: 'rgb(240, 249, 255)',
+  },
+
+  {
+    title: 'Prescription',
+    color: 'rgb(241, 240, 255)',
+
+    icon: <FontAwesomeIcon icon={faPills} />,
+    link: '/managePrescription',
+  },
+  {
+    title: 'Admit History',
+    color: 'rgb(254, 240, 255)',
+
+    icon: <FontAwesomeIcon icon={faBed} />,
+    link: '/admitHistory',
+  },
+  {
+    title: 'Blood Bank',
+    color: 'rgb(255, 240, 254)',
+
+    icon: <FontAwesomeIcon icon={faDroplet} />,
+    link: '/viewBloodBank',
+  },
+  {
+    title: 'View Invoice',
+    color: 'rgb(240, 255, 241)',
+
+    icon: <FontAwesomeIcon icon={faListCheck} />,
+    link: '/viewInvoice',
+  },
+]
+export const pharmacistCardContentList: CardContentType = [
+  {
+    title: 'Medicine Category',
+    icon: <FontAwesomeIcon icon={faArrowsSplitUpAndLeft} />,
+    link: '/medicineCategory',
+    color: 'rgb(255, 240, 240)',
+  },
+
+  {
+    title: 'Manage Medicine',
+    icon: <FontAwesomeIcon icon={faFirstAid} />,
+    link: '/manageMedicine',
+    color: 'rgb(240, 249, 255)',
+  },
+
+  {
+    title: 'Prescription',
+    color: 'rgb(241, 240, 255)',
+
+    icon: <FontAwesomeIcon icon={faStethoscope} />,
+    link: '/provideMedication',
   },
 ]
