@@ -26,6 +26,12 @@
   flex-direction: column;
   justify-content: center;
 }
+.here {
+  color: blue;
+  text-decoration: underline;
+  cursor: pointer;
+  width: fit-content;
+}
 .loginHeading {
   font-size: 32px;
   font-weight: bolder;

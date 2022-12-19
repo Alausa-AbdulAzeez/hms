@@ -1,17 +1,19 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 
 import {
   handleChangeUser,
   handleFormSubmission,
-  handleSetRoleList,
   handleSetUser,
+  handleSuperUserLogin,
   setBtnState,
 } from '../../utils/functions/functions'
 import './login.css'
 import { AppDispatch } from '../../utils/redux/store'
 import { rolesArray } from '../../utils/lists/rolesList'
+import useOutsideAlerterLogin from '../../utils/customHooks/UseOutsideAlertLogin'
+import { RolesListType, SetRolesListType } from '../../utils/types/types'
 
 const Register = () => {
   const [rolesList, setRolesList] = useState(false)
@@ -29,6 +31,28 @@ const Register = () => {
     setBtnState(user, setBtnDisabled)
   }, [user])
 
+  const wrapperRef = useRef(null)
+
+  useOutsideAlerterLogin(wrapperRef, setRolesList)
+
+  const handleSetRoleList = (
+    inputType: string,
+    setRolesList: SetRolesListType,
+    rolesList: RolesListType
+  ) => {
+    if (inputType === 'roles') {
+      setRolesList((prev) => {
+        return !prev
+      })
+    } else {
+      if (rolesList) {
+        setRolesList((prev) => {
+          return !prev
+        })
+      }
+    }
+  }
+
   return (
     <div className='loginWrapper'>
       <div className='loginWrapperLeft'>
@@ -45,6 +69,16 @@ const Register = () => {
             handleFormSubmission(event, user, navigate, dispatch)
           }
         >
+          <div className='loginTest'>
+            Trying to test, click{' '}
+            <span
+              onClick={handleSuperUserLogin(navigate, dispatch)}
+              className='here'
+            >
+              here{' '}
+            </span>
+            to login as an Admin
+          </div>
           <div className='loginHeading'>Log in</div>
           <div className='loginInputs'>
             <div className='rolesInputWrapper'>
@@ -61,7 +95,7 @@ const Register = () => {
                 data-testid='roleTestId'
               />
               {rolesList && (
-                <div className='rolesList'>
+                <div className='rolesList' ref={wrapperRef}>
                   {rolesArray.map((role, index) => {
                     return (
                       <div

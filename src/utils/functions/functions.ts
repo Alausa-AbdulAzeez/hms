@@ -8,7 +8,6 @@ import {
   UserType,
 } from '../types/types'
 import { useState } from 'react'
-import { lang } from 'moment'
 
 export const handleSetRoleList = (
   inputType: string,
@@ -67,6 +66,24 @@ export const handleFormSubmission = (
   }
 }
 
+// Form submission
+export const handleSuperUserLogin = (
+  navigate: NavigateFunction,
+  dispatch: AppDispatch
+) => {
+  return (event: React.MouseEvent) => {
+    dispatch(
+      loginUser({
+        role: 'Admin',
+        email: 'ala@gmail.com',
+        password: 'abcd',
+        isLoggedIn: true,
+      })
+    )
+    return navigate('/')
+  }
+}
+
 // Set submit button state
 export const setBtnState = (
   user: UserType,
@@ -82,6 +99,7 @@ export const setBtnState = (
 // Set Edit
 export const useHandleShowEdit = () => {
   const [a, setA] = useState(false)
+
   setA(true)
   console.log(a)
 }

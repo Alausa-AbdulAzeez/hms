@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import './card.css'
 
 export type SingleCardType = {
@@ -11,14 +12,16 @@ export type SingleCardType = {
 
 const Card = (props: SingleCardType) => {
   return (
-    <div
-      className='cardContainer
+    <Link to={props.singleCard.link}>
+      <div
+        className='cardContainer
       '
-      style={{ backgroundColor: props.singleCard.color }}
-    >
-      {props.singleCard.icon}
-      <p className='cardTitle'>{props.singleCard.title}</p>
-    </div>
+        style={{ backgroundColor: props.singleCard.color }}
+      >
+        {props.singleCard.icon}
+        <p className='cardTitle'>{props.singleCard.title}</p>
+      </div>
+    </Link>
   )
 }
 

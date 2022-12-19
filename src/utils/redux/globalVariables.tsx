@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit'
-import type { PayloadAction } from '@reduxjs/toolkit'
+// import type { PayloadAction } from '@reduxjs/toolkit'
 
 export interface GlobalVariablesState {
   showEdit: boolean
@@ -15,10 +15,12 @@ export interface GlobalVariablesState {
     password?: string
     confirmPassword?: string
   }
+  showRoles: boolean
 }
 const initialState: GlobalVariablesState = {
   showEdit: false,
   formDetails: {},
+  showRoles: true,
 }
 
 export const globalVariablesSlice = createSlice({
@@ -36,11 +38,14 @@ export const globalVariablesSlice = createSlice({
 
       state.formDetails = action.payload
     },
+    setShowRolesFalse: (state) => {
+      state.showRoles = true
+    },
   },
 })
 
 // Action creators are generated for each case reducer function
-export const { setEditTrue, setEditFalse, setFormDetails } =
+export const { setEditTrue, setEditFalse, setFormDetails, setShowRolesFalse } =
   globalVariablesSlice.actions
 
 export default globalVariablesSlice.reducer
