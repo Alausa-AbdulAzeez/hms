@@ -10,7 +10,7 @@
   justify-content: center;
   background-color: rgb(244, 255, 240);
   /* background-color: rgba(127, 84, 125, 0.295); */
-  max-width: 400px;
+  /* max-width: 400px; */
   cursor: pointer;
 }
 .cardContainer:hover {
