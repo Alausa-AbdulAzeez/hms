@@ -143,7 +143,7 @@ export default class DemoApp extends React.Component<{}, DemoAppState> {
           </label>
         </div>
         <div className='demo-app-sidebar-section'>
-          <h2>All Events ({this.state.currentEvents.length})</h2>
+          <h2>All Appointments ({this.state.currentEvents.length})</h2>
           <ul>{this.state.currentEvents.map(renderSidebarEvent)}</ul>
         </div>
       </div>
